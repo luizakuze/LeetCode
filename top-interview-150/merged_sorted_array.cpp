@@ -1,26 +1,24 @@
 class Solution {
 public:
-    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) { // nums1 e nums2 já estão ordenados!
-        // removendo elementos do vetor 1 (se tiver extra)
-        for (int j = m; j != nums1.size(); j++) {
-            nums1[j] = 0;
-        }
-
-        // colocando elementos no vetor 1
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        // Adicionando elementos de nums2 ao final de nums1
         for (int i = 0; i < n; i++) {
             nums1[m + i] = nums2[i];
         }
 
-        // ordenamento
-        for (int k = 0; k < (m+n-1); k++) {
-            if (nums1[k] > nums1[k+1]) {
-                int aux = nums1[k];
-                nums1[k] = nums1[k+1];
-                nums1[k+1] = aux;
+        // Ordenamento usando Bubble Sort
+        for (int k = 0; k < m + n - 1; k++) {
+            for (int l = 0; l < m + n - k - 1; l++) {
+                if (nums1[l] > nums1[l + 1]) {
+                    int aux = nums1[l];
+                    nums1[l] = nums1[l + 1];
+                    nums1[l + 1] = aux;
+                }
             }
         }
     }
 };
+
 
 // Primeira tentativa...
  //class Solution {
