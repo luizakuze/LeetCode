@@ -1,3 +1,6 @@
+//Algoritmo in-place:    https://en.wikipedia.org/wiki/In-place_algorithm  
+// Altera diretamente a estrutura de dado de entrada, sem utilizar memória adicional
+
 class Solution {
 public:
     int removeDuplicates(std::vector<int>& nums) {
